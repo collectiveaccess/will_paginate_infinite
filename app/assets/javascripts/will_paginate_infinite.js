@@ -5,7 +5,7 @@ jQuery(function() {
       var bottom_distance = 20;
 
       if (more_posts_url && $(window).scrollTop() > $(document).height() - $(window).height() - bottom_distance) {
-        $('.infinite-pagination').html('<div class="infinite-loading-message">Loading...</div>');
+        $('.infinite-loading-message').html('Loading...');
         $.getScript(more_posts_url);
       }
     });

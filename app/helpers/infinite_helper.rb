@@ -6,10 +6,10 @@ module InfiniteHelper
     html = "$('" + containerSelector + "').append('"+ j(render render_options) + "');"
 
     if collection.next_page
-      html += "$('" + containerSelector + "').parent().find('.infinite-pagination').replaceWith('" + j(will_paginate(collection, renderer: WillPaginateInfinite::InfinitePagination)) + "');"
+      html += "$('.infinite-pagination').replaceWith('" + j(will_paginate(collection, renderer: WillPaginateInfinite::InfinitePagination)) + "');"
     else
-      html += "$('" + containerSelector + "').off('scroll');"
-      html += "$('" + containerSelector + "').parent().find('.infinite-pagination').remove();"
+      html += "$(window).off('scroll');"
+      html += "$('.infinite-pagination').remove();"
     end
 
     html.html_safe

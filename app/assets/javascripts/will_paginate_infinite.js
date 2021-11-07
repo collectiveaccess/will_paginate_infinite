@@ -9,6 +9,7 @@ jQuery(function() {
         $.getScript(more_posts_url, function(e) {
         	$('.infinite-pagination-message').html('');
         });
+        $('.infinite-pagination a.next_page').remove();
       }
     });
   }
